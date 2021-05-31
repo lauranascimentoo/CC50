@@ -9,37 +9,41 @@
 int
 main(int argc, char *argv[])
 {
-    if(argc == 2 && isdigit(*argv[1]))
-    {
+  if(argc == 2 && isdigit(*argv[1]))
+  {
         int key = atoi (argv[1]);
-        printf("What do you want to encrypt?\n");
-        char* text = GetString();
+
+        printf("What do you want to encrypt?(Write something with less than 200>
+        string text = GetString();
         printf("Here is your text:\n");
 
-        //ERRADO
-        for(int letter = 0, textsize = strlen(text) ; letter < textsize ; lett>
+        for(int letter = 0, textsize = strlen(text); letter < textsize; letter+>
         {
-            if(text[letter] >= 'A' && text[letter] <= 'Z')
+            if(isupper(text[letter]))
             {
-                printf("%c\n", (text[letter] = (text[letter] + key) % 26);
+                //the 65 it's because of the chart ascii//
+                printf("%c", (((text[letter] + key) - 65) % 26)+ 65);
             }
-            else if(text[letter] >= 'a' && text[letter] <= 'z')
+            else if(islower(text[letter]))
             {
-                printf("%c\n", (text[letter] = (text[letter] + key) % 26);
+                //the 97 it's because of the chart ascii//
+                printf("%c", (((text[letter] + key) - 97) % 26) + 97);
             }
             else
             {
-                printf("%c\n", text[letter]);
+                printf("%c", text[letter]);
             }
         }
-    }
-    
-    else
-    {
-        printf("Something is wrong. Try again.\n");
-    }
-    return 0;
+        printf("\n\n");
+        return 0;
+     }
+     else
+     {
+        printf("Something is wrong. Try digiting ./caesar and a natural number\>
+        return 1;
+     }
 }
+
 
 
 
