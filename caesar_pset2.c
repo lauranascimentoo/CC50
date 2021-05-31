@@ -9,8 +9,8 @@
 int
 main(int argc, char *argv[])
 {
-  if(argc == 2 && isdigit(*argv[1]))
-  {
+   if(argc == 2 && isdigit(*argv[1]))
+   {
         int key = atoi (argv[1]);
 
         printf("What do you want to encrypt?(Write something with less than 200>
