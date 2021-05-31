@@ -17,7 +17,7 @@ main(int argc, char *argv[])
         string text = GetString();
         printf("Here is your text:\n");
 
-        for(int letter = 0, textsize = strlen(text); letter < textsize; letter+>
+        for(int letter = 0, textsize = strlen(text); letter < textsize; letter++)
         {
             if(isupper(text[letter]))
             {
@@ -39,7 +39,7 @@ main(int argc, char *argv[])
      }
      else
      {
-        printf("Something is wrong. Try digiting ./caesar and a natural number\>
+        printf("Something is wrong. Try digiting ./caesar and a natural number\n");
         return 1;
      }
 }
